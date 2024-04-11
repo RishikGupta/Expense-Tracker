@@ -1,0 +1,19 @@
+{
+    "data": {
+        "userList": [
+            {
+                "Username": "Rishik",
+                "Password": "hello123",
+                "Income": 100,
+                "Expenses": 50,
+                "Weekly Budget": 10,
+                "Monthly Budget": 20,
+                "Yearly Budget": 30,
+                "Transaction Type": "gift",
+                "Transaction Date": "04\/01\/2024",
+                "Balance": 50,
+                "Current Budget": 0
+            }
+        ]
+    }
+}
