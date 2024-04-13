@@ -1,6 +1,7 @@
 const userData = [
     {
      username: "Rishik",
+     email: "rishik123@gmail.com",
      password: "hello123",
      userType: "student",
      income: 100,
@@ -28,8 +29,9 @@ const userData = [
     },
     {
         username: "Dikunj",
+        email: "dikunj123@gmail.com",
         password: "hello456",
-        userType: "Professional",
+        userType: "professional",
         income: 1000,
         expense: 500,
         balance: 500,
@@ -54,3 +56,7 @@ const userData = [
         ]
        }
    ];
+
+   for (let obj of userData){
+    console.log(obj);
+   }
