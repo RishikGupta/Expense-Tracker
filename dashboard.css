@@ -1,0 +1,37 @@
+.button-container{
+    display: flex; 
+    justify-content:space-around;
+}
+.gradient-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    /* background-image: linear-gradient(to right, #ff416c, #ff4b2b); */
+    background: #373B44;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to top, #4286f4, #373B44);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to top, #4286f4, #373B44); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+/* Button hover effect */
+.gradient-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Button click effect */
+.gradient-btn:active {
+    transform: translateY(1px);
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+}
+h1 {
+    text-align: center;
+}
+
+
