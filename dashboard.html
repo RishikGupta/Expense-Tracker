@@ -9,14 +9,44 @@
 </head>
 <body>
     <h1 id="greeting"></h1><br>
-    <div class="button-container">
-        <button class="gradient-btn" onclick="goToAddIncome();">Add Income</button>
-        <button class="gradient-btn" onclick="goToAddExpense();">Add Expenses</button>
-      </div><br>
-      <div style="border: 3px solid black;">
-        <div id="chartContainer" style="height: 370px; width: 100%;"></div>
+    <div class="main-container">
+      <div class="left-container">
+        <div class="centered-div">
+          <div style="border: 3px solid gray;height:400px;width: 600px;padding: 10px;">
+            <canvas id="smallDoughnutChart"></canvas>
+          </div>
+        </div>
       </div>
-<script src="https://cdn.canvasjs.com/canvasjs.min.js"></script>
+      <div class="right-container">
+        <div class="container">
+          <div class="box">
+            <div class="box-content">
+              <img src="images/income.png" alt="Icon 1">
+              <div class="text-content">
+                <h2>Income</h2>
+                <p id="income_card"></p>
+              </div>
+            </div>
+          </div>
+          <div class="box">
+            <div class="box-content">
+              <img src="images/spending.png" alt="Icon 2">
+              <div class="text-content">
+                <h2>Expense</h2>
+                <p id="expense_card"></p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br>
+        <div class="button-container">
+          <button class="gradient-btn" onclick="goToAddIncome();">Add Income</button>
+          <button class="gradient-btn" onclick="goToAddExpense();">Add Expenses</button>
+        </div>
+      </div>
+    </div>
+     
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="js/dashboard.js"></script>
 </body>
 </html>
