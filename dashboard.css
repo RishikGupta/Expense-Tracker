@@ -35,3 +35,75 @@ h1 {
 }
 
 
+.parent-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60vh; /* Ensure the parent container fills the viewport height */
+    border: 1px solid black;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.box {
+  flex: 1;
+  max-width: 300px;
+  padding: 20px;
+  background: linear-gradient(to bottom right, #6c757d, #343a40);
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  color: white;
+  display: flex; /* Add this */
+}
+
+.box img {
+  width: 50px; /* Adjust the size of the image */
+  margin-right: 20px; /* Add margin to create space between image and text */
+}
+
+.box h2 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.box p {
+  font-size: 1rem;
+}
+
+/* Media query for responsiveness */
+@media (max-width: 600px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+#smallDoughnutChart {
+    height: 60%; /* Adjust as needed */
+    width: 80%; /* Adjust as needed */
+    max-width: 700px; /* Set maximum width */
+    padding: 5%; /* Adjust padding based on the dimensions */
+  }
+  
+  @media (max-width: 768px) {
+    #smallDoughnutChart {
+      height: 50%; /* Adjust height for smaller screens */
+      width: 90%; /* Adjust width for smaller screens */
+      padding: 5%; /* Adjust padding for smaller screens */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    #smallDoughnutChart {
+      height: 40%; /* Adjust height for even smaller screens */
+      width: 90%; /* Adjust width for even smaller screens */
+      padding: 5%; /* Adjust padding for even smaller screens */
+    }
+  }
+  
+
+
+
