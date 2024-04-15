@@ -14,8 +14,8 @@ $( document ).ready(function() {
     let fetchedIncomeData = JSON.parse(localStorage.getItem("IncomeData") || "[]");
     let fetchedExpenseData = JSON.parse(localStorage.getItem("ExpenseData") || "[]");
 
-    let userEmail = sessionStorage.getItem("fetchEmail");
-    let userName = sessionStorage.getItem("fetchUserName");
+    let userEmail = localStorage.getItem("fetchEmail");
+    let userName = localStorage.getItem("fetchUserName");
     let fetchedCustomerData = JSON.parse(localStorage.getItem("CustomerData") || "[]");
     $("#greeting").text("Welcome "+userName+" to your Expense Tracker!");
 
