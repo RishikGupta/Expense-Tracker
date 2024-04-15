@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Transactions</title>
+    <style>
+        /* Flexbox container to align items side by side */
+        .container {
+            display: flex;
+            flex-wrap: wrap; /* Allow items to wrap to the next line if there's not enough space */
+            gap: 20px; /* Gap between items */
+        }
+
+        /* Style for the table */
+        table {
+            border-collapse: collapse;
+            width: 50%; /* Set table width to 50% of the container */
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+
+        /* Style for the chart canvas */
+        canvas {
+            width: 50%; /* Set canvas width to 50% of the container */
+            height: auto; /* Allow canvas height to adjust based on width */
+        }
+
+        .delete-btn {
+            background-color: #f44336;
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <h1>User Transactions</h1>
+    <table id="transaction-table">
+        <thead>
+            <tr>
+                <th>Transaction Number</th>
+                <th>Type</th>
+                <th>Category</th>
+                <th>Date</th>
+                <th>Amount</th>
+                <th>Description</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody id="transaction-body">
+            <!-- Transaction rows will be dynamically added here -->
+        </tbody>
+    </table>
+
+    <!-- Add canvas element for Chart.js -->
+    <canvas id="income-expenses-chart" width="400" height="200"></canvas>
+
+    <!-- Include Chart.js library -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Retrieve current user's data from localStorage
+            const currentUser = JSON.parse(localStorage.getItem("currentUser"));
+            const transactions = currentUser ? currentUser.transactions : [];
+
+            // Function to generate table row for a transaction
+            function generateTransactionRow(transaction, index) {
+                const tableBody = document.getElementById("transaction-body");
+                const row = document.createElement("tr");
+
+                // Populate row with transaction data
+                row.innerHTML = `
+                    <td>${transaction.tNumber}</td>
+                    <td>${transaction.tType}</td>
+                    <td>${transaction.tCategory}</td>
+                    <td>${transaction.tDay}/${transaction.tMonth}/${transaction.tYear}</td>
+                    <td>${transaction.tAmount}</td>
+                    <td>${transaction.tDescription}</td>
+                    <td><button class="delete-btn" data-index="${index}">Delete</button></td>
+                `;
+                
+                // Attach delete button click event listener
+                row.querySelector(".delete-btn").addEventListener("click", function() {
+                    // Remove transaction from array
+                    transactions.splice(index, 1);
+                    // Regenerate table rows
+                    generateTransactionRows();
+                    // Update chart
+                    updateChart();
+                });
+
+                // Append row to table body
+                tableBody.appendChild(row);
+            }
+
+            // Function to generate table rows for transactions
+            function generateTransactionRows() {
+                const tableBody = document.getElementById("transaction-body");
+                tableBody.innerHTML = ''; // Clear existing rows
+
+                transactions.forEach((transaction, index) => {
+                    generateTransactionRow(transaction, index);
+                });
+            }
+
+            // Initial generation of table rows
+            generateTransactionRows();
+
+            // Function to update the chart
+            function updateChart() {
+                const income = transactions.filter(transaction => transaction.tType === "income")
+                                           .reduce((total, transaction) => total + transaction.tAmount, 0);
+                const expenses = transactions.filter(transaction => transaction.tType === "expense")
+                                             .reduce((total, transaction) => total + transaction.tAmount, 0);
+                const chartData = {
+                    labels: ["Income", "Expenses"],
+                    datasets: [{
+                        label: "Income vs Expenses",
+                        data: [income, expenses],
+                        backgroundColor: [
+                            'rgba(54, 162, 235, 0.2)',
+                            'rgba(255, 99, 132, 0.2)',
+                        ],
+                        borderColor: [
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(255, 99, 132, 1)',
+                        ],
+                        borderWidth: 1
+                    }]
+                };
+
+                const chartOptions = {
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                };
+
+                const ctx = document.getElementById('income-expenses-chart').getContext('2d');
+                const myChart = new Chart(ctx, {
+                    type: 'bar',
+                    data: chartData,
+                    options: chartOptions
+                });
+            }
+
+            // Initial update of the chart
+            updateChart();
+        });
+    </script>
+</body>
+</html>
