@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/jquery.js"></script>
+    <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body>
+    <h1 id="greeting"></h1><br>
+    <div class="button-container">
+        <button class="gradient-btn" onclick="goToAddIncome();">Add Income</button>
+        <button class="gradient-btn" onclick="goToAddExpense();">Add Expenses</button>
+      </div><br>
+      <div style="border: 3px solid black;">
+        <div id="chartContainer" style="height: 370px; width: 100%;"></div>
+      </div>
+<script src="https://cdn.canvasjs.com/canvasjs.min.js"></script>
+    <script src="js/dashboard.js"></script>
+</body>
+</html>
