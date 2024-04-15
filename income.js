@@ -1,6 +1,6 @@
 function saveIncome() {
     let IncomeData = JSON.parse(localStorage.getItem("IncomeData") || "[]");
-    let userEmail = sessionStorage.getItem("fetchEmail");
+    let userEmail = localStorage.getItem("fetchEmail");
      // Get values from form fields
     var category = document.getElementById('category').value;
     var date = document.getElementById('expenseDate').value;
