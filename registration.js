@@ -64,8 +64,8 @@ $( document ).ready(function() {
             for (let i = 0; i < fetchedCustomerData.length;i++) {
               if(fetchedCustomerData[i].SigEmail==LoginEmail && fetchedCustomerData[i].SigPassword==LoginPassword){
                 found=1;
-                sessionStorage.setItem("fetchEmail", LoginEmail);
-                sessionStorage.setItem("fetchUserName",fetchedCustomerData[i].SigName);
+                localStorage.setItem("fetchEmail", LoginEmail);
+                localStorage.setItem("fetchUserName",fetchedCustomerData[i].SigName);
                 window.location.href = "dashboard.html";
               }
             }
