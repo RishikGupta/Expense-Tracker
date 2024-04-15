@@ -1,0 +1,112 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #75aeea;
+    color: #333;
+}
+
+.navbar {
+    background-color: #007bff;
+    padding: 10px 0;
+}
+
+.navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.navbar ul li {
+    display: inline;
+}
+
+.navbar ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+}
+
+.navbar ul li a:hover {
+    background-color: #0056b3;
+}
+
+.container{
+    max-width: 800px;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+h1{
+    text-align: center;
+    margin-bottom: 20px;
+}
+.form-group{
+    margin-bottom: 15px;
+}
+label{
+    display: block;
+    font-weight: bold;
+}
+input[type="text"], input[type="number"] {
+    width: 90%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+button{
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+button:hover {
+    background-color: #0056b3;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+th, td{
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+th{
+    background-color: #007bff;
+    color: #fff;
+}
+tr:nth-child(even){
+    background-color: #f2f2f2;
+}
+
+.select{
+    width: 90%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.btn-close {
+    background-color: transparent;
+    border: 0;
+    font-size: 20px;
+    cursor: pointer;
+    position: absolute;
+    right: 2px;
+    top: 2px;
+    border-radius: 50%;
+    transition: all 0.2s ease-in;
+}
+
+.btn-close:hover{
+    opacity: 0.7;
+    background-color: lightgray;
+}
