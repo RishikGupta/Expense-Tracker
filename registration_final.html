@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>ExpenseTracker</title>
+	<link rel="stylesheet" href="index.css">
+    <script src="jquery/dist/jquery.js"></script>
+</head>
+
+<body>
+	<header>
+		<h1 class="title">Sign In or Join Us</h1>
+		<h3 class="title">Unlock Your Expenses Journey With Us</h3>
+	</header>
+
+	<!-- container div -->
+	<div class="container">
+
+		<!-- upper button section to select
+			the login or signup form -->
+		<div class="slider"></div>
+		<div class="btn">
+			<button class="login">Login</button>
+			<button class="signup">Signup</button>
+		</div>
+
+		<!-- Form section that contains the
+			login and the signup form -->
+		<div class="form-section">
+
+			<!-- login form -->
+			<div class="login-box">
+				<input type="email" class="email ele" id="txtLoginEmail" placeholder="youremail@email.com">
+				<input type="password" class="password ele" id="txtLoginPassword" placeholder="password">
+				<span id="errAuth"></span>
+				<button class="clkbtn" id="btnLogin">Login</button>
+			</div>
+
+			<!-- signup form -->
+			<div class="signup-box">
+				<input type="text" class="name ele" id="txtSigName" placeholder="Enter your name">
+				<input type="email" class="email ele" id="txtSigEmail" placeholder="youremail@email.com">
+				<input type="password" class="password ele" id="txtSigPassword" placeholder="password">
+				<input type="password" class="password ele" id="txtSigConfirmPassword" placeholder="Confirm password">
+				<button type="submit" class="clkbtn" id="btnSignUp">Signup</button>
+			</div>
+		</div>
+	</div>
+	<script src="js/registration.js"></script>
+</body>
+</html>
