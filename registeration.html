@@ -16,7 +16,6 @@
 
 	<!-- container div -->
 	<div class="container">
-
 		<!-- upper button section to select
 			the login or signup form -->
 		<div class="slider"></div>
@@ -32,7 +31,9 @@
 			<!-- login form -->
 			<div class="login-box">
 				<input type="email" class="email ele" id="txtLoginEmail" placeholder="youremail@email.com">
+				<span id="errEmail"></span>
 				<input type="password" class="password ele" id="txtLoginPassword" placeholder="password">
+				<span id="errPassword"></span>
 				<span id="errAuth"></span>
 				<button class="clkbtn" id="btnLogin">Login</button>
 			</div>
@@ -48,5 +49,7 @@
 		</div>
 	</div>
 	<script src="js/registration.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/xregexp@5.0.2/xregexp-all.min.js"></script>
 </body>
 </html>
+
